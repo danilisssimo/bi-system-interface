@@ -7,7 +7,12 @@
       }"
       @logoutEvent="exitHandler">
     </Navigator>
-    <AdministratorComponent
+    <ManagerComponent v-if="currentUserRole == 'manager'"
+      :currentTab="currentTab"
+      :currentTabName="currentTabName"
+      :username="username">
+    </ManagerComponent>
+    <AdministratorComponent v-else-if="currentUserRole == 'administrator'"
       :currentTab="currentTab"
       :currentTabName="currentTabName"
       :username="username">
@@ -18,13 +23,14 @@
 <script>
 import { API } from '@/assets/js/api';
 import Navigator from './Navigation/Navigator.vue';
-// import ManagerComponent from './Roles/ManagerComponent.vue';
+import ManagerComponent from './Roles/ManagerComponent.vue';
 import AdministratorComponent from './Roles/AdministratorComponent.vue';
 
 export default {
   name: 'MainContainer',
   data() {
     return {
+      currentUserRole: 'manager',
       currentTab: 'DashboardTab',
       currentTabName: 'Dashboard',
       username: "Name Surename"
@@ -32,7 +38,7 @@ export default {
   },
   emits: ['exitEvent'],
   components: {
-    Navigator, AdministratorComponent
+    Navigator, AdministratorComponent, ManagerComponent
   },
   methods: {
     getUserName() {},

@@ -2,15 +2,30 @@
   <div class="dataset-container">
     <div class="data-container">
       <div class="num-cards-container">
-        <NumChartCard cardID="num-counter-1" title="Conversion of visitors to buyers" prefix="%" :value="38.6" :footer-value="12.1"
-          footer-suffix="%" :footer-display-prefix="true" :footer-is-toogle-up="true" description="more then last month">
+        <NumChartCard cardID="num-counter-1" 
+          title="Conversion of visitors to buyers" 
+          prefix="%" 
+          :value="38.6" 
+          :footer-value="12.1"
+          footer-suffix="%" 
+          :footer-display-prefix="true" 
+          :footer-is-toogle-up="true" 
+          description="more then last month">
         </NumChartCard>
-        <NumChartCard cardID="num-counter-2" title="Average CLTV" prefix="$" :value="545050" :footer-value="-32"
-          footer-suffix="%" :footer-display-prefix="true" description="less than last month">
+        <NumChartCard cardID="num-counter-2" 
+          title="Average CLTV" 
+          prefix="$" 
+          :value="545050" 
+          :footer-value="-32"
+          footer-suffix="%" 
+          :footer-display-prefix="true" 
+          description="less than last month">
         </NumChartCard>
       </div>
-      <PieChartCard cardID="pie-chart-1" title="Loyalty"
-        :labels="['Battery', 'Cars', 'Service', 'Additional', 'Detail']" :data="[11323, 40234, 25371, 21324, 12351]">
+      <PieChartCard cardID="pie-chart-1" 
+        title="Loyalty"
+        :labels="['Battery', 'Cars', 'Service', 'Additional', 'Detail']" 
+        :data="[11323, 40234, 25371, 21324, 12351]">
       </PieChartCard>
     </div>
     <div class="data-container">
